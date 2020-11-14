@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # team7-jsset
 
 <<<<<<< HEAD
@@ -42,4 +43,6 @@ Card pictures from: http://stefan.endrullis.de/en/game_set.html.
 =======
 >>>>>>> 734019d477f45172ffca582efa29fe71abeb6574
 
+=======
+>>>>>>> f0fdd91750460221c7533cf7f94a6e552bbece55
 # CarPriceAnalysis
