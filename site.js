@@ -10,9 +10,11 @@ let miscellaneoustaxes = document.getElementById("miscellaneoustaxes").value;
 let warranty = document.getElementById("warranty").value;
 let approximatefinalpurchaseprice = document.getElementById("approximatefinalpurchaseprice").value;
 let other = document.getElementById("other").value;
-let year = document.getElementById("year").value;
 
-totalTax = (taxpercent/100) * parseInt(currentprice);
+let maintainceCost = document.getElementById("");
+
+let year = document.getElementById("year").value;
+let totalTax = (taxpercent/100) * parseInt(currentprice);
 
 
 
@@ -31,4 +33,7 @@ function findFinalPrice(){
     console.log(total);
 }
 
+function maintainencePrice(){
+    var maintainenceTable = document.getElementById('maintainenceTable');
+}
 
