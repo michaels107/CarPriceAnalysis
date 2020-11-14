@@ -2,12 +2,7 @@
 
 Game of set: 
 
-The objective of the game of set is identify a 
-set of three cards from the cards that are laid out in front of you by 
-the 4 features on each card.
-
-A set consists of three cards where either all the features are the 
-same or different on each card.
+Test
 
 -------------------------------------
 
