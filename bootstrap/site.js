@@ -1,6 +1,5 @@
 function findFinalPrice() {
     let currentprice = document.getElementById("currentprice").value;
-
     let taxpercent = document.getElementById("taxpercent").value;
     let titles = document.getElementById("titles").value;
     let fees = document.getElementById("fees").value;
@@ -23,6 +22,19 @@ function findFinalPrice() {
     console.log(total);
 }
 
-function findDeprecitionPrice() {
+function findFinalMaintainencePrice() {
+    let interval = document.getElementById("Service Interval").value;
+    let cost = document.getElementById("costservice").value;
+    let current = document.getElementById("miles").value;
+    let ending = document.getElementById("endmiles").value;
+
+    let numServices = (parseInt(ending) - parseInt(current)) / parseInt(interval);
+    let finalcost = numServices * parseInt(cost);
+
+    document.getElementById("final cost").innerHTML = finalcost;
+    document.getElementById("services").innerHTML = numServices;
+}
+
+function findFinalDepreciationPrice() {
 
 }
