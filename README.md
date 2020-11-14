@@ -1,5 +1,6 @@
 # team7-jsset
 
+<<<<<<< HEAD
 Game of set: 
 
 Test
@@ -38,5 +39,7 @@ References:
 Algorithm for shuffling: https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle.
 Basics of the game: https://en.wikipedia.org/wiki/Set_(card_game).
 Card pictures from: http://stefan.endrullis.de/en/game_set.html.
+=======
+>>>>>>> 734019d477f45172ffca582efa29fe71abeb6574
 
 # CarPriceAnalysis
