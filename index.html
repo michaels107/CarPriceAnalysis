@@ -18,7 +18,6 @@
                 
         <div class="topnav" id="myTopnav">
             <a href="#finalpricecalculation" class="active">Final Price Calculation</a>
-            <a href="#loanschedule">Loan Schedule</a>
             <a href="#depreciation">Depreciation</a>
             <a href="#maintainence">Maintainence</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -30,33 +29,44 @@
         </div>
         
                 <div id = "Time"></div>
-        <p id="ET">A car is the 2nd most expensive investment. Find out how much you can get your car today!</p>
+        <p id="ET">A car is considered the the 2nd largest investment. Find out how much you can get your car today!</p>
         </div>
 
-        <div id = "cards">
-            <! -- Card Entry and Total Points -->
-            <textarea id = "make">Make</textarea>
+        <div class = "finalpricecalculation">
+            <p>Make
+                <!-- Make<textarea id = "make">Make</textarea> -->
+            </p>
+            
+            <form action="">
+                <select name="make" id="make">
+                  <option value="honda">Honda</option></select>
+
             <br>
-            <textarea id = "model">Model</textarea>
+            <p>Model<textarea id = "model">Accord Sport (Used)</textarea></p>
             <br>
-            <textarea id = "currentprice">Current Price</textarea>
+            <p>Year<textarea id = "year"> 2017</textarea></p>
             <br>
-            <textarea id = "taxamount">Tax</textarea>
+            <p>Current Price<textarea id = "currentprice"> 17998</textarea></p>
             <br>
-            <textarea id = "titles">Titles</textarea>
+            <p>Tax % <textarea id = "taxpercent">7.5</textarea></p>
             <br>
-            <textarea id = "fees">Fees</textarea>
+            <p>Title Costs<textarea id = "titles">100</textarea></p>
             <br>
-            <textarea id = "miscellaneous taxes">Miscellaneous Taxes</textarea>
+            <p>Fees<textarea id = "fees">100</textarea></p>
             <br>
-            <textarea id = "miscellaneous taxes">Warranty</textarea>
+            <p>Miscellaneous Taxes<textarea id = "miscellaneoustaxes">282.68</textarea></p>
             <br>
-            <textarea id = "miscellaneous taxes">Approximate Final Purchase Price</textarea>
+            <p>Warranty Costs<textarea id = "warranty"> 1669</textarea></p>
+            <br>
+            <p>Other Costs<textarea id = "other">0</textarea></p>
+            <br>
+            <p>Tax<textarea id = "tax" readonly style = "background-color: rgb(92, 91, 91)"> </textarea></p>
+            <br>
+            <p>Final Cost<textarea id = "approximatefinalpurchaseprice" readonly style = "background-color: rgb(92, 91, 91)"> </textarea></p>
             <br>
 
-            <! -- Buttons for user to interact with-->
             <div id="buttons">
-                <button onclick="giveHint()">Find Price!</button>
+                <button onclick="findFinalPrice()">Find Total Cost</button>
             </div>
         </div>
         </div>
