@@ -1,17 +1,12 @@
 function findFinalPrice() {
-    let make = document.getElementById("make").value;
-    let model = document.getElementById("model").value;
     let currentprice = document.getElementById("currentprice").value;
 
     let taxpercent = document.getElementById("taxpercent").value;
-    let tax = document.getElementById("tax").value;
     let titles = document.getElementById("titles").value;
     let fees = document.getElementById("fees").value;
     let miscellaneoustaxes = document.getElementById("miscellaneoustaxes").value;
     let warranty = document.getElementById("warranty").value;
-    let finalprice = document.getElementById("final price").value;
     let other = document.getElementById("other").value;
-    let year = document.getElementById("year").value;
 
     totalTax = (taxpercent / 100) * parseInt(currentprice);
     document.getElementById("tax").innerHTML = totalTax;
@@ -26,4 +21,8 @@ function findFinalPrice() {
     console.log("---");
     document.getElementById("final price").innerHTML = total;
     console.log(total);
+}
+
+function findDeprecitionPrice() {
+
 }
