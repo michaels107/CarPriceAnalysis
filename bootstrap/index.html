@@ -26,14 +26,13 @@
                 <li><a href="depreciation.html">Depreciation</a></li>
             </ul>
         </div>
-        </div>
     </nav>
     <div class="container">
         <div class="jumbotron">
             <p> A car is considered the the 2nd largest investment. Find out how much you can get your car today! Use our website to calculate the final price of a car's value.</p>
         </div>
     </div>
-    <form>
+    <form class="finalpricecalculation">
         <div class="container">
             <div class="form-group">
                 <label class=".control-label">Make:</label>
@@ -81,7 +80,7 @@
         <div class="container">
             <div class="form-group">
                 <label class=".control-label">Model:</label>
-                <input class="form-control" type="text" placeholder="Type Model"></input>
+                <input class="form-control" id="model" type="text" placeholder="Type Model"></input>
             </div>
         </div>
         <div class="container">
@@ -123,46 +122,51 @@
 
         <div class="container">
             <label class=".control-label">Current Price:</label>
-            <input class="form-control" type="text" placeholder="Type Current Price"></input>
+            <input class="form-control" id="currentprice" type="text" placeholder="Type Current Price"></input>
         </div>
         <div class="container">
             <label class=".control-label">Tax %:</label>
-            <input class="form-control" type="text" placeholder="Type Tax %"></input>
+            <input class="form-control" id="taxpercent" type="text" placeholder="Type Tax %"></input>
         </div>
         <div class="container">
             <label class=".control-label">Title Costs:</label>
-            <input class="form-control" type="text" placeholder="Type Title Costs"></input>
+            <input class="form-control" id="titles" type="text" placeholder="Type Title Costs"></input>
         </div>
         <div class="container">
             <label class=".control-label">Fees:</label>
-            <input class="form-control" type="text" placeholder="Type Fees"></input>
+            <input class="form-control" id="fees" type="text" placeholder="Type Fees"></input>
         </div>
         <div class="container">
             <label class=".control-label">Miscellaneous Taxes:</label>
-            <input class="form-control" type="text" placeholder="Type Miscellaneous Taxes"></input>
+            <input class="form-control" id="miscellaneoustaxes" type="text" placeholder="Type Miscellaneous Taxes"></input>
         </div>
         <div class="container">
             <label class=".control-label">Warranty Costs:</label>
-            <input class="form-control" type="text" placeholder="Type Warranty Costs"></input>
+            <input class="form-control" id="warranty" type="text" placeholder="Type Warranty Costs"></input>
         </div>
         <div class="container">
             <label class=".control-label">Other Costs:</label>
-            <input class="form-control" type="text" placeholder="Type Other Costs"></input>
+            <input class="form-control" id="other" type="text" placeholder="Type Other Costs"></input>
         </div>
         <div class="container"></div>
-        <button type="submit" class="btn btn-primary" onclick="findFinalPrice()">Find Total Cost</button>
+        <button type="button" class="btn btn-primary" onclick="findFinalPrice()">Find Total Cost</button>
         </div>
     </form>
     <div class="container">
         <div class="jumbotron">
             <h3>Final Cost:</h3>
-            <p id="approximatefinalpurchaseprice"></p>
+            <p id="final price"></p>
+            <br>
             <h3>Tax:</h3>
             <p id="tax"></p>
         </div>
     </div>
 
-    <p id="footer">Team: PKM</p>
+    <footer id="footer" class="modal-footer">
+        <div class="container text-center">
+            <small>Team: PKM</small>
+        </div>
+    </footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous">
     </script>

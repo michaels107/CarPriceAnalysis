@@ -1,57 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <script type="text/javascript" src="site.js" async></script>
-        <link rel="stylesheet" type="text/css" href="site.css" media="screen"/>
-        <title>Car Price Analysis</title>
-        <meta charset="utf-8" />
-        <div class="topnav" id="myTopnav">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Car Price Analysis</title>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="site.js" async></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- <div class="topnav" id="myTopnav">
             <a href="index.html" class="active">Final Price Calculation</a>
             <a href="depreciation.html">Depreciation</a>
             <a href="maintainence.html">Maintainence</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
               <i class="fa fa-bars"></i>
             </a>
-          </div>
-    </head> 
+          </div> -->
+</head>
 
-    <body>
-               
-        <div class ="header">
-            <h1>Honda: Maintainence Analysis</h1>
+<body>
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Honda: Car Price Analysis</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Final Price Calculation</a></li>
+                <li class="active"><a href="#">Maintainence</a></li>
+                <li><a href="depreciation.html">Depreciation</a></li>
+            </ul>
         </div>
-
-
-      
-
-        <p id="ET">Figure out all your maintainence needs!</p>
-
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            <p> Figure out all your maintainence needs!</p>
         </div>
-
-        <div class = "finalpricecalculation">
-            <p>Make
-            </p>
+    </div>
+    <form class="finalpricecalculation">
+        <div class="container">
+            <div class="form-group">
+                <label class=".control-label">Make:</label>
                 <select name="make" id="make">
-                  <option value="honda">Honda</option></select>
-                  
-
+          <option value=""> Select Make </option>
+          <option value="acura">Acura</option>
+          <option value="alfa-romeo">Alfa Romeo</option>
+          <option value="audi">Audi</option>
+          <option value="bentley">Bentley</option>
+          <option value="bmw">BMW</option>
+          <option value="buick">Buick</option>
+          <option value="cadillac">Cadillac</option>
+          <option value="chevrolet">Chevrolet</option>
+          <option value="chrysler">Chrysler</option>
+          <option value="dodge">Dodge</option>
+          <option value="fiat">FIAT</option>
+          <option value="ford">Ford</option>
+          <option value="genesis">Genesis</option>
+          <option value="gmc">GMC</option>
+          <option value="honda">Honda</option>
+          <option value="hyundai">Hyundai</option>
+          <option value="infiniti">INFINITI</option>
+          <option value="jaguar">Jaguar</option>
+          <option value="jeep">Jeep</option>
+          <option value="kia">KIA</option>
+          <option value="land-rover">Land Rover</option>
+          <option value="lexus">Lexus</option>
+          <option value="lincoln">Lincoln</option>
+          <option value="maserati">Maserati</option>
+          <option value="mazda">Mazda</option>
+          <option value="mercedes-benz">Mercedes-Benz</option>
+          <option value="mini">MINI</option>
+          <option value="mitsubishi">Mitsubishi</option>
+          <option value="nissan">Nissan</option>
+          <option value="porsche">Porsche</option>
+          <option value="ram">RAM</option>
+          <option value="subaru">Subaru</option>
+          <option value="tesla">Tesla</option>
+          <option value="toyota">Toyota</option>
+          <option value="volkswagen">Volkswagen</option>
+          <option value="volvo">Volvo</option>
+        </select>
+            </div>
         </div>
 
-        <img src="images/Honda Maintainence.png" alt="Honda Maintainence ">"
-        
+        <div class="container">
+            <img src="images\Honda Maintainence.png" alt="Honda Maintainence ">
+        </div>
+
         <table>
-          <tbody>
-          <tr>
-          <td>sdfsd</td>
-          <td>sdfsd</td>
-          <td>sdfsdf</td>
-          </tr>
-          </tbody>
-          </table>
+            <tbody>
+                <tr>
+                    <td>sdfsd</td>
+                    <td>sdfsd</td>
+                    <td>sdfsdf</td>
+                </tr>
+            </tbody>
+        </table>
 
 
-        <p id ="footer">Team: PKM</p>
-        
-    </body>
+        <footer id="footer" class="modal-footer">
+            <div class="container text-center">
+                <small>Team: PKM</small>
+            </div>
+        </footer>
+
+</body>
+
 </html>
-    
