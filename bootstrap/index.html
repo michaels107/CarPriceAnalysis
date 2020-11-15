@@ -22,149 +22,67 @@
             </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Final Price Calculation</a></li>
-                <li><a href="#maintainence">Maintainence</a></li>
-                <li><a href="#depreciation">Depreciation</a></li>
+                <li><a href="maintainence.html">Maintainence</a></li>
+                <li><a href="depreciation.html">Depreciation</a></li>
             </ul>
         </div>
-        </div>
     </nav>
-    <div class="container">
+    <div class="container text-center">
         <div class="jumbotron">
-            <p> A car is considered the the 2nd largest investment. Find out how much you can get your car today! Use our website to calculate the final price of a car's value.</p>
+            <div class="container">
+                <h2> Final Price Calculation</h2>
+                <p> A car is considered the the 2nd largest investment. Find out how much you can get your car today! Use our website to calculate the final price of a car's value.</p>
+            </div>
         </div>
     </div>
-    <form>
-        <div class="container">
-            <div class="form-group">
-                <label class=".control-label">Make:</label>
-                <select name="make" id="make">
-          <option value=""> Select Make </option>
-          <option value="acura">Acura</option>
-          <option value="alfa-romeo">Alfa Romeo</option>
-          <option value="audi">Audi</option>
-          <option value="bentley">Bentley</option>
-          <option value="bmw">BMW</option>
-          <option value="buick">Buick</option>
-          <option value="cadillac">Cadillac</option>
-          <option value="chevrolet">Chevrolet</option>
-          <option value="chrysler">Chrysler</option>
-          <option value="dodge">Dodge</option>
-          <option value="fiat">FIAT</option>
-          <option value="ford">Ford</option>
-          <option value="genesis">Genesis</option>
-          <option value="gmc">GMC</option>
-          <option value="honda">Honda</option>
-          <option value="hyundai">Hyundai</option>
-          <option value="infiniti">INFINITI</option>
-          <option value="jaguar">Jaguar</option>
-          <option value="jeep">Jeep</option>
-          <option value="kia">KIA</option>
-          <option value="land-rover">Land Rover</option>
-          <option value="lexus">Lexus</option>
-          <option value="lincoln">Lincoln</option>
-          <option value="maserati">Maserati</option>
-          <option value="mazda">Mazda</option>
-          <option value="mercedes-benz">Mercedes-Benz</option>
-          <option value="mini">MINI</option>
-          <option value="mitsubishi">Mitsubishi</option>
-          <option value="nissan">Nissan</option>
-          <option value="porsche">Porsche</option>
-          <option value="ram">RAM</option>
-          <option value="subaru">Subaru</option>
-          <option value="tesla">Tesla</option>
-          <option value="toyota">Toyota</option>
-          <option value="volkswagen">Volkswagen</option>
-          <option value="volvo">Volvo</option>
-        </select>
-            </div>
-        </div>
-        <div class="container">
-            <div class="form-group">
-                <label class=".control-label">Model:</label>
-                <input class="form-control" type="text" placeholder="Type Model"></input>
-            </div>
-        </div>
-        <div class="container">
-            <label class="control-label">Year:</label>
-            <select name="year" id="year">
-        <option value="2020">2008</option>
-        <option value="2019">2007</option>
-        <option value="2018">2012</option>
-        <option value="2017">2011</option>
-        <option value="2016">2010</option>
-        <option value="2015">2009</option>
-        <option value="2014">2008</option>
-        <option value="2013">2007</option>
-        <option value="2012">2012</option>
-        <option value="2011">2011</option>
-        <option value="2010">2010</option>
-        <option value="2009">2009</option>
-        <option value="2008">2008</option>
-        <option value="2007">2007</option>
-        <option value="2006">2006</option>
-        <option value="2005">2005</option>
-        <option value="2004">2004</option>
-        <option value="2003">2003</option>
-        <option value="2002">2002</option>
-        <option value="2001">2001</option>
-        <option value="2000">2000</option>
-        <option value="1999">1999</option>
-        <option value="1998">1998</option>
-        <option value="1997">1997</option>
-        <option value="1996">1996</option>
-        <option value="1995">1995</option>
-        <option value="1994">1994</option>
-        <option value="1993">1993</option>
-        <option value="1992">1992</option>
-        <option value="1991">1991</option>
-        <option value="1990">1990</option>
-      </select>
-        </div>
-
-        <div class="container">
-            <label class=".control-label">Current Price:</label>
-            <input class="form-control" type="text" placeholder="Type Current Price"></input>
-        </div>
-        <div class="container">
-            <label class=".control-label">Tax %:</label>
-            <input class="form-control" type="text" placeholder="Type Tax %"></input>
-        </div>
-        <div class="container">
-            <label class=".control-label">Title Costs:</label>
-            <input class="form-control" type="text" placeholder="Type Title Costs"></input>
-        </div>
-        <div class="container">
-            <label class=".control-label">Fees:</label>
-            <input class="form-control" type="text" placeholder="Type Fees"></input>
-        </div>
-        <div class="container">
-            <label class=".control-label">Miscellaneous Taxes:</label>
-            <input class="form-control" type="text" placeholder="Type Miscellaneous Taxes"></input>
-        </div>
-        <div class="container">
-            <label class=".control-label">Warranty Costs:</label>
-            <input class="form-control" type="text" placeholder="Type Warranty Costs"></input>
-        </div>
-        <div class="container">
-            <label class=".control-label">Other Costs:</label>
-            <input class="form-control" type="text" placeholder="Type Other Costs"></input>
-        </div>
-        <div class="container">
-            <label class=".control-label">Tax:</label>
-            <input class="form-control" type="text" placeholder="Type Tax"></input>
-        </div>
-        <div class="container"></div>
-        <button type="submit" class="btn btn-primary" onclick="findFinalPrice()">Find Total Cost</button>
-        </div>
+    </div>
+    <div class="container">
+        <label class=".control-label">Tax %:</label>
+        <input class="form-control" id="taxpercent" type="text" placeholder="Type Tax %"></input>
+    </div>
+    <div class="container">
+        <label class=".control-label">Title Costs:</label>
+        <input class="form-control" id="titles" type="text" placeholder="Type Title Costs"></input>
+    </div>
+    <div class="container">
+        <label class=".control-label">Fees:</label>
+        <input class="form-control" id="fees" type="text" placeholder="Type Fees"></input>
+    </div>
+    <div class="container">
+        <label class=".control-label">Miscellaneous Taxes:</label>
+        <input class="form-control" id="miscellaneoustaxes" type="text" placeholder="Type Miscellaneous Taxes"></input>
+    </div>
+    <div class="container">
+        <label class=".control-label">Warranty Costs:</label>
+        <input class="form-control" id="warranty" type="text" placeholder="Type Warranty Costs"></input>
+    </div>
+    <div class="container">
+        <label class=".control-label">Other Costs:</label>
+        <input class="form-control" id="other" type="text" placeholder="Type Other Costs"></input>
+    </div>
     </form>
+    <br>
+    <div class=" col text-center">
+        <div class="container">
+            <button class="btn btn-primary btn-lg" form="finalpricecalculation" type="button" onclick="findFinalPrice()">Find Total Cost</button>
+        </div>
+    </div>
+    <br>
     <div class="container">
         <div class="jumbotron">
             <h3>Final Cost:</h3>
-            <p id="approximatefinalpurchaseprice"></p>
+            <p id="final price"></p>
+            <br>
+            <h3>Tax:</h3>
+            <p id="tax"></p>
         </div>
     </div>
 
-    <p id="footer">Team: PKM</p>
+    <footer id="footer" class="modal-footer">
+        <div class="container text-center">
+            <small>Team: PKM</small>
+        </div>
+    </footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous">
     </script>
