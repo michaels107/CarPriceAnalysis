@@ -148,7 +148,7 @@ function findFinalDepreciationPrice() {
                     currentprice = price - depval;
                     break;
                 default:
-
+                    break;
             }
             break;
         case model == 'civic':
@@ -174,10 +174,11 @@ function findFinalDepreciationPrice() {
                     currentprice = price - depval;
                     break;
                 default:
+                    break;
 
             }
             break;
-        case model == 'clarity':
+        case "clarity":
             switch (age) {
                 case age == '1':
                     depval = price * clarity['1'];
@@ -200,6 +201,7 @@ function findFinalDepreciationPrice() {
                     currentprice = price - depval;
                     break;
                 default:
+                    break;
 
             }
             break;
@@ -226,6 +228,7 @@ function findFinalDepreciationPrice() {
                     currentprice = price - depval;
                     break;
                 default:
+                    break;
 
             }
             break;
@@ -252,6 +255,7 @@ function findFinalDepreciationPrice() {
                     currentprice = price - depval;
                     break;
                 default:
+                    break;
 
             }
             break;
@@ -278,6 +282,7 @@ function findFinalDepreciationPrice() {
                     currentprice = price - depval;
                     break;
                 default:
+                    break;
 
             }
             break;
@@ -304,6 +309,7 @@ function findFinalDepreciationPrice() {
                     currentprice = price - depval;
                     break;
                 default:
+                    break;
 
             }
             break;
@@ -330,6 +336,7 @@ function findFinalDepreciationPrice() {
                     currentprice = price - depval;
                     break;
                 default:
+                    break;
 
             }
             break;
@@ -356,6 +363,7 @@ function findFinalDepreciationPrice() {
                     currentprice = price - depval;
                     break;
                 default:
+                    break;
 
             }
             break;
@@ -383,6 +391,7 @@ function findFinalDepreciationPrice() {
                     currentprice = price - depval;
                     break;
                 default:
+                    break;
 
             }
             break;
@@ -410,6 +419,7 @@ function findFinalDepreciationPrice() {
                     currentprice = price - depval;
                     break;
                 default:
+                    break;
 
             }
             break;
