@@ -8,18 +8,18 @@ function findFinalPrice() {
     let other = document.getElementById("other").value;
 
     totalTax = (taxpercent / 100) * parseInt(currentprice);
-    console.log(totalTax);
+    //console.log(totalTax);
     document.getElementById("tax").innerHTML = totalTax;
     let total = parseFloat(currentprice) + parseFloat(totalTax) + parseFloat(titles) + parseFloat(fees) + parseFloat(miscellaneoustaxes) + parseFloat(warranty) + parseFloat(other);
-    console.log("---");
-    console.log(currentprice);
-    console.log(taxpercent);
+    //console.log("---");
+    //console.log(currentprice);
+    //console.log(taxpercent);
     // console.log(totalTax);
-    console.log(titles);
-    console.log(fees);
-    console.log(miscellaneoustaxes);
-    console.log(warranty);
-    console.log(other);
+    //console.log(titles);
+    //console.log(fees);
+    //console.log(miscellaneoustaxes);
+    //console.log(warranty);
+    //console.log(other);
     // console.log("---");
     document.getElementById("final price").innerHTML = total;
     // console.log(total);
@@ -30,7 +30,6 @@ function findFinalMaintainencePrice() {
     let cost = document.getElementById("costservice").value;
     let current = document.getElementById("miles").value;
     let ending = document.getElementById("endmiles").value;
-
     let numServices = (parseInt(ending) - parseInt(current)) / parseInt(interval);
     let finalcost = numServices * parseInt(cost);
 
@@ -38,9 +37,7 @@ function findFinalMaintainencePrice() {
     document.getElementById("services").innerHTML = numServices;
 }
 
-function findFinalDepreciationPrice() {
-
-    // maps for getting data
+function getDepreciationValue(){
     const accord = new Map();
     const civic = new Map();
     const clarity = new Map();
@@ -120,316 +117,456 @@ function findFinalDepreciationPrice() {
     ridgeline.set('4', 50.90);
     ridgeline.set('5', 43.32);
 
-    let model = document.getElementById("model").value;
-    let age = document.getElementById("age").value;
+    let model = document.getElementById("model").value.toLowerCase();
+    let age = document.getElementById("age").value.toLowerCase();
     let price = parseInt(document.getElementById("bought").value);
+    let depreciation=0;
     let depval = 0;
     let currentprice = 0;
+    //console.log(age);
 
-
-    switch (model) {
-        case model == 'accord':
+    switch(model) {
+        
+        case 'accord':
             switch (age) {
-                case age == '1':
-                    depval = price * accord['1'];
-                    currentprice = price - depval;
-                    break;
-                case age == '2':
-                    depval = price * accord['2'];
-                    currentprice = price - depval;
-                    break;
-                case age == '3':
-                    depval = price * accord['3'];
-                    currentprice = price - depval;
-                    break;
-                case age == '4':
-                    depval = price * accord['4'];
-                    currentprice = price - depval;
-                    break;
-                case age == '5':
-                    depval = price * accord['5'];
-                    currentprice = price - depval;
-                    break;
-                default:
-                    break;
+                case 'new':
+                depval =price;
+                currentprice = price;
+                break;
             }
-            break;
-        case model == 'civic':
             switch (age) {
-                case age == '1':
-                    depval = price * civic['1'];
-                    currentprice = price - depval;
-                    break;
-                case age == '2':
-                    depval = price * civic['2'];
-                    currentprice = price - depval;
-                    break;
-                case age == '3':
-                    depval = price * civic['3'];
-                    currentprice = price - depval;
-                    break;
-                case age == '4':
-                    depval = price * civic['4'];
-                    currentprice = price - depval;
-                    break;
-                case age == '5':
-                    depval = price * civic['5'];
-                    currentprice = price - depval;
-                    break;
-                default:
-                    break;
-
+                case '1':
+                depval =price * (1- accord.get('1')/100);
+                currentprice = price - depval;
+                break;
             }
-            break;
-        case "clarity":
             switch (age) {
-                case age == '1':
-                    depval = price * clarity['1'];
-                    currentprice = price - depval;
-                    break;
-                case age == '2':
-                    depval = price * clarity['2'];
-                    currentprice = price - depval;
-                    break;
-                case age == '3':
-                    depval = price * clarity['3'];
-                    currentprice = price - depval;
-                    break;
-                case age == '4':
-                    depval = price * clarity['4'];
-                    currentprice = price - depval;
-                    break;
-                case age == '5':
-                    depval = price * clarity['5'];
-                    currentprice = price - depval;
-                    break;
-                default:
-                    break;
-
+                case '2':
+                depval =(price * (1-accord.get('2')/100));
+                currentprice = price - depval;
+                break;
             }
-            break;
-        case model == 'crv':
             switch (age) {
-                case age == '1':
-                    depval = price * crv['1'];
-                    currentprice = price - depval;
-                    break;
-                case age == '2':
-                    depval = price * crv['2'];
-                    currentprice = price - depval;
-                    break;
-                case age == '3':
-                    depval = price * crv['3'];
-                    currentprice = price - depval;
-                    break;
-                case age == '4':
-                    depval = price * crv['4'];
-                    currentprice = price - depval;
-                    break;
-                case age == '5':
-                    depval = price * crv['5'];
-                    currentprice = price - depval;
-                    break;
-                default:
-                    break;
-
+                case '3':
+                depval = price * (1-accord.get('3')/100);
+                currentprice = price - depval;
+                break;
             }
-            break;
-        case model == 'fit':
             switch (age) {
-                case age == '1':
-                    depval = price * fit['1'];
-                    currentprice = price - depval;
-                    break;
-                case age == '2':
-                    depval = price * fit['2'];
-                    currentprice = price - depval;
-                    break;
-                case age == '3':
-                    depval = price * fit['3'];
-                    currentprice = price - depval;
-                    break;
-                case age == '4':
-                    depval = price * fit['4'];
-                    currentprice = price - depval;
-                    break;
-                case age == '5':
-                    depval = price * fit['5'];
-                    currentprice = price - depval;
-                    break;
-                default:
-                    break;
-
+                case '4':
+                depval = price * (1-accord.get('4')/100);
+                currentprice = price - depval;
+                break;
             }
-            break;
-        case model == 'hrv':
             switch (age) {
-                case age == '1':
-                    depval = price * hrv['1'];
-                    currentprice = price - depval;
-                    break;
-                case age == '2':
-                    depval = price * hrv['2'];
-                    currentprice = price - depval;
-                    break;
-                case age == '3':
-                    depval = price * hrv['3'];
-                    currentprice = price - depval;
-                    break;
-                case age == '4':
-                    depval = price * hrv['4'];
-                    currentprice = price - depval;
-                    break;
-                case age == '5':
-                    depval = price * hrv['5'];
-                    currentprice = price - depval;
-                    break;
-                default:
-                    break;
-
+                case '5':
+                depval = price * (1-accord.get('5')/100);
+                currentprice = price - depval;
+                break;
             }
-            break;
-        case model == 'insight':
-            switch (age) {
-                case age == '1':
-                    depval = price * insight['1'];
-                    currentprice = price - depval;
-                    break;
-                case age == '2':
-                    depval = price * insight['2'];
-                    currentprice = price - depval;
-                    break;
-                case age == '3':
-                    depval = price * insight['3'];
-                    currentprice = price - depval;
-                    break;
-                case age == '4':
-                    depval = price * insight['4'];
-                    currentprice = price - depval;
-                    break;
-                case age == '5':
-                    depval = price * insight['5'];
-                    currentprice = price - depval;
-                    break;
-                default:
-                    break;
-
-            }
-            break;
-        case model == 'odyssey':
-            switch (age) {
-                case age == '1':
-                    depval = price * odyssey['1'];
-                    currentprice = price - depval;
-                    break;
-                case age == '2':
-                    depval = price * odyssey['2'];
-                    currentprice = price - depval;
-                    break;
-                case age == '3':
-                    depval = price * odyssey['3'];
-                    currentprice = price - depval;
-                    break;
-                case age == '4':
-                    depval = price * odyssey['4'];
-                    currentprice = price - depval;
-                    break;
-                case age == '5':
-                    depval = price * odyssey['5'];
-                    currentprice = price - depval;
-                    break;
-                default:
-                    break;
-
-            }
-            break;
-        case model == 'passport':
-            switch (age) {
-                case age == '1':
-                    depval = price * passport['1'];
-                    currentprice = price - depval;
-                    break;
-                case age == '2':
-                    depval = price * passport['2'];
-                    currentprice = price - depval;
-                    break;
-                case age == '3':
-                    depval = price * passport['3'];
-                    currentprice = price - depval;
-                    break;
-                case age == '4':
-                    depval = price * passport['4'];
-                    currentprice = price - depval;
-                    break;
-                case age == '5':
-                    depval = price * passport['5'];
-                    currentprice = price - depval;
-                    break;
-                default:
-                    break;
-
-            }
-            break;
-
-        case model == 'pilot':
-            switch (age) {
-                case age == '1':
-                    depval = price * pilot['1'];
-                    currentprice = price - depval;
-                    break;
-                case age == '2':
-                    depval = price * pilot['2'];
-                    currentprice = price - depval;
-                    break;
-                case age == '3':
-                    depval = price * pilot['3'];
-                    currentprice = price - depval;
-                    break;
-                case age == '4':
-                    depval = price * pilot['4'];
-                    currentprice = price - depval;
-                    break;
-                case age == '5':
-                    depval = price * pilot['5'];
-                    currentprice = price - depval;
-                    break;
-                default:
-                    break;
-
-            }
-            break;
-
-        case model == 'ridgeline':
-            switch (age) {
-                case age == '1':
-                    depval = price * ridgeline['1'];
-                    currentprice = price - depval;
-                    break;
-                case age == '2':
-                    depval = price * ridgeline['2'];
-                    currentprice = price - depval;
-                    break;
-                case age == '3':
-                    depval = price * ridgeline['3'];
-                    currentprice = price - depval;
-                    break;
-                case age == '4':
-                    depval = price * ridgeline['4'];
-                    currentprice = price - depval;
-                    break;
-                case age == '5':
-                    depval = price * ridgeline['5'];
-                    currentprice = price - depval;
-                    break;
-                default:
-                    break;
-
-            }
-            break;
-        default:
-
-
     }
-    document.getElementById("depreciation").innerHTML = depval;
-    document.getElementById("current price").innerHTML = currentprice;
+
+    switch(model) {
+        case 'civic':
+            switch (age) {
+                case 'new':
+                depval =price;
+                currentprice = price;
+                break;
+            }
+            switch (age) {
+                case '1':
+                depval = price * (1-civic.get('1')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '2':
+                depval = price * (1-civic.get('2')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '3':
+                depval = price * (1-civic.get('3')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '4':
+                depval = price * (1-civic.get('4')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '5':
+                depval = price * (1-civic.get('5')/100);
+                currentprice = price - depval;
+                break;
+            }
+        }
+        
+    switch(model) {
+        case 'clarity':
+            switch (age) {
+                case 'new':
+                depval =price;
+                currentprice = price;
+                break;
+            }
+            switch (age) {
+                case '1':
+                depval = price * (1-clarity.get('1')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '2':
+                depval = price * (1-clarity.get('2')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '3':
+                depval = price * (1-clarity.get('3')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '4':
+                depval = price * (1-clarity.get('4')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '5':
+                depval = price * (1-clarity.get('5')/100);
+                currentprice = price - depval;
+                break;
+            }
+    }
+
+    switch(model) {        
+        case 'cr-v':
+            switch (age) {
+                case 'new':
+                depval =price;
+                currentprice = price;
+                break;
+            }
+            switch (age) {
+                case '1':
+                depval = price * (1-crv.get('1')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '2':
+                depval = price * (1-crv.get('2')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '3':
+                depval = price * (1-crv.get('3')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '4':
+                depval = price * (1-crv.get('4')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '5':
+                depval = price * (1-crv.get('5')/100);
+                currentprice = price - depval;
+                break;
+            }
+        }
+        
+        switch(model) {    
+        case 'fit':
+            switch (age) {
+                case 'new':
+                depval =price;
+                currentprice = price;
+                break;
+            }
+            switch (age) {
+                case '1':
+                depval = price * (1-fit.get('1')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '2':
+                depval = price * (1-fit.get('2')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '3':
+                depval = price * (1-fit.get('3')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '4':
+                depval = price * (1-fit.get('4')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '5':
+                depval = price * (1-fit.get('5')/100);
+                currentprice = price - depval;
+                break;
+            }
+        }
+           
+        switch(model) {
+        case 'hr-v':
+            switch (age) {
+                case 'new':
+                depval =price;
+                currentprice = price;
+                break;
+            }
+            switch (age) {
+                case '1':
+                depval = price * (1-hrv.get('1')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '2':
+                depval = price * (1-hrv.get('2')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '3':
+                depval = price * (1-hrv.get('3')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '4':
+                depval = price * (1-hrv.get('4')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '5':
+                depval = price * (1-hrv.get('5')/100);
+                currentprice = price - depval;
+                break;
+            }
+        }
+            
+        switch(model) {
+        case 'insight':
+            switch (age) {
+                case 'new':
+                depval =price;
+                currentprice = price;
+                break;
+            }
+            switch (age) {
+                case '1':
+                depval = price * (1-insight.get('1')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '2':
+                depval = price * (1-insight.get('2')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '3':
+                depval = price * (1-insight.get('3')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '4':
+                depval = price * (1-insight.get('4')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '5':
+                depval = price * (1-insight.get('5')/100);
+                currentprice = price - depval;
+                break;
+            }
+        }
+
+        switch(model) {
+        case 'odyssey':
+            switch (age) {
+                case 'new':
+                depval =price;
+                currentprice = price;
+                break;
+            }
+            switch (age) {
+                case '1':
+                depval = price * (1-odyssey.get('1')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '2':
+                depval = price * (1-odyssey.get('2')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '3':
+                depval = price * (1-odyssey.get('3')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '4':
+                depval = price * (1-odyssey.get('4')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '5':
+                depval = price * (1-odyssey.get('5')/100);
+                currentprice = price - depval;
+                break;
+            }
+        }
+            
+        switch(model) {
+        case 'passport':
+            switch (age) {
+                case 'new':
+                depval =price;
+                currentprice = price;
+                break;
+            }
+            switch (age) {
+                case '1':
+                depval = price * (1-passport.get('1')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '2':
+                depval = price * (1-passport.get('2')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '3':
+                depval = price * (1-passport.get('3')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '4':
+                depval = price * (1-passport.get('4')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '5':
+                depval = price * (1-passport.get('5')/100);
+                currentprice = price - depval;
+                break;
+            }
+        }
+
+        switch(model) {
+        case 'pilot':
+            switch (age) {
+                case 'new':
+                depval =price;
+                currentprice = price;
+                break;
+            }
+            switch (age) {
+                case '1':
+                depval = price * (1-pilot.get('1')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '2':
+                depval = price * (1-pilot.get('2')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '3':
+                depval = price * (1-pilot.get('3')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '4':
+                depval = price * (1-pilot.get('4')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '5':
+                depval = price * (1-pilot.get('5')/100);
+                currentprice = price - depval;
+                break;
+            }
+        }
+        
+        switch(model) {
+        case 'ridgeline':
+            switch (age) {
+                case 'new':
+                depval =price;
+                currentprice = price;
+                break;
+            }
+            switch (age) {
+                case '1':
+                depval = price * (1-ridgeline.get('1')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '2':
+                depval = price * (1-ridgeline.get('2')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '3':
+                depval = price * (1-ridgeline.get('3')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '4':
+                depval = price * (1-ridgeline.get('4')/100);
+                currentprice = price - depval;
+                break;
+            }
+            switch (age) {
+                case '5':
+                depval = price * (1-ridgeline.get('5')/100);
+                currentprice = price - depval;
+                break;
+            }
+    }
+    document.getElementById("depreciation").innerHTML = parseFloat(depval).toFixed(2);
+    document.getElementById("current price").innerHTML = parseFloat(currentprice).toFixed(2);
 }
+
+
