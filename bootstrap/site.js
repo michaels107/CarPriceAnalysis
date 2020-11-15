@@ -8,18 +8,21 @@ function findFinalPrice() {
     let other = document.getElementById("other").value;
 
     totalTax = (taxpercent / 100) * parseInt(currentprice);
+    console.log(totalTax);
     document.getElementById("tax").innerHTML = totalTax;
     let total = parseFloat(currentprice) + parseFloat(totalTax) + parseFloat(titles) + parseFloat(fees) + parseFloat(miscellaneoustaxes) + parseFloat(warranty) + parseFloat(other);
     console.log("---");
     console.log(currentprice);
-    console.log(totalTax);
+    console.log(taxpercent);
+    // console.log(totalTax);
     console.log(titles);
     console.log(fees);
     console.log(miscellaneoustaxes);
     console.log(warranty);
-    console.log("---");
+    console.log(other);
+    // console.log("---");
     document.getElementById("final price").innerHTML = total;
-    console.log(total);
+    // console.log(total);
 }
 
 function findFinalMaintainencePrice() {
