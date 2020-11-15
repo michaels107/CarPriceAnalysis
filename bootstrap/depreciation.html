@@ -44,7 +44,7 @@
                 <select name="model" id="model">
                     <option value=""> Select model </option>
                     <option value="Accord">Accord</option>
-                    <option value="alfa-Civic">Civic</option>
+                    <option value="Civic">Civic</option>
                     <option value="Clarity">Clarity</option>
                     <option value="CR-V">CR-V</option>
                     <option value="Fit">Fit</option>
@@ -69,45 +69,32 @@
             </select>
         </div>
         <div class="container">
-            <label class="control-label">Ownership length:</label>
-            <select name="age" id="age">
-                <option value="1">1 Year</option>
-                <option value="2">2 Years</option>
-                <option value="3">3 Years</option>
-                <option value="4">4 Years</option>
-                <option value="5">5 Years</option>
-            </select>
+            <label class=".control-label">Price Bought for:</label>
+            <input class="form-control" id="bought" type="text" placeholder="Type Bought For Price"></input>
         </div>
+    </form>
 
+    <br>
+    <div class=" col text-center">
         <div class="container">
-            <label class=".control-label">Current Price:</label>
-            <input class="form-control" id="currentprice" type="text" placeholder="Type Current Price"></input>
+            <button class="btn btn-primary btn-lg" form="finaldepreciationcalculation" type="button" onclick="findFinalDepreciationPrice()">Find Depreciation Value</button>
         </div>
-        <div class="container">
-            <label class=".control-label">Current Price:</label>
-            <input class="form-control" id="currentprice" type="text" placeholder="Type Current Price"></input>
+    </div>
+    <br>
+    <div class="container">
+        <div class="jumbotron">
+            <h3>Depreciation Value:</h3>
+            <p id="depreciation"></p>
+            <h3>Curernt Price:</h3>
+            <p id="curernt price"></p>
         </div>
+    </div>
 
-
-        <br>
-        <div class=" col text-center">
-            <div class="container">
-                <button class="btn btn-primary btn-lg" form="finaldepreciationcalculation" type="button" onclick="findFinalDepreciationPrice()">Find Depreciation Value</button>
-            </div>
+    <footer id="footer " class="modal-footer ">
+        <div class="container text-center ">
+            <small>Team: PKM</small>
         </div>
-        <br>
-        <div class="container">
-            <div class="jumbotron">
-                <h3>Final Depreciation Value:</h3>
-                <p id="final depreciation"></p>
-            </div>
-        </div>
-
-        <footer id="footer " class="modal-footer ">
-            <div class="container text-center ">
-                <small>Team: PKM</small>
-            </div>
-        </footer>
+    </footer>
 </body>
 
 </html>
